@@ -53,5 +53,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HighScore" type="Label" parent="."]
+margin_right = 45.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
