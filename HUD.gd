@@ -24,8 +24,9 @@ func show_game_over():
 	$StartButton.show()
 
 
-func update_score(score):
+func update_score(score, hiscore):
 	$ScoreLabel.text = str(score)
+	$HighScore.text = str(hiscore)
 
 func _on_StartButton_pressed():
 	$StartButton.hide()
