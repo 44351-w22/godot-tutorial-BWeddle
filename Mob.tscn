@@ -1,34 +1,76 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://dodge_assets/art/enemySwimming_2.png" type="Texture" id=1]
-[ext_resource path="res://dodge_assets/art/enemySwimming_1.png" type="Texture" id=2]
-[ext_resource path="res://dodge_assets/art/enemyWalking_1.png" type="Texture" id=3]
-[ext_resource path="res://dodge_assets/art/enemyFlyingAlt_1.png" type="Texture" id=4]
-[ext_resource path="res://dodge_assets/art/enemyWalking_2.png" type="Texture" id=5]
-[ext_resource path="res://dodge_assets/art/enemyFlyingAlt_2.png" type="Texture" id=6]
+[ext_resource path="res://dodge_assets/art/PIPOYA FREE RPG Character Sprites 32x32/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 10-1.png" type="Texture" id=1]
+[ext_resource path="res://dodge_assets/art/PIPOYA FREE RPG Character Sprites 32x32/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 09-1.png" type="Texture" id=2]
+[ext_resource path="res://dodge_assets/art/PIPOYA FREE RPG Character Sprites 32x32/PIPOYA FREE RPG Character Sprites 32x32/Enemy/Enemy 11-1.png" type="Texture" id=3]
 [ext_resource path="res://Mob.gd" type="Script" id=7]
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "fly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "swim",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 36.0
-height = 28.0
+radius = 38.0
+height = 8.00001
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
@@ -36,7 +78,7 @@ gravity_scale = 0.0
 script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "swim"
 
