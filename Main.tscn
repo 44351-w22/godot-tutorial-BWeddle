@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -6,6 +6,25 @@
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://dodge_assets/art/House In a Forest Loop.ogg" type="AudioStream" id=5]
 [ext_resource path="res://dodge_assets/art/gameover.wav" type="AudioStream" id=6]
+[ext_resource path="res://dodge_assets/art/gameboy_outdoor_assets_v1.2.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 192, 112, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 192, 128, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "background",
+"speed": 5.0
+} ]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -15,6 +34,13 @@ _data = {
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
 Mob = ExtResource( 3 )
+
+[node name="BackGround" type="AnimatedSprite" parent="."]
+position = Vector2( 238, 360 )
+scale = Vector2( 30, 45 )
+frames = SubResource( 4 )
+animation = "background"
+playing = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
